@@ -1,0 +1,9 @@
+{% extends "page/base.html" %} {% block title %}Blog{% endblock %} {% block
+content %}{% block content %} {% for post in Posts %}
+<h4>
+  {{post.date|date:'d-m-Y'}}<a href="/blog/{{post.id}}">{{post.title}}</a>
+  {% if post.image %}
+  <img src="{{post.image.url}}" width="200px" height="170px" />
+  {% endif %}
+</h4>
+{% endfor %} {% endblock %}
